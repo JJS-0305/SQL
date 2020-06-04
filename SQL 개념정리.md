@@ -136,15 +136,58 @@ GROUP BY country HAVING COUNT(country) >= 10
 
 ### CASE
 
+> CASE WHEN 조건절 THEN 참일때 값 ELSE 거짓일때 값 END 컬럼명 
+
 
 
 ### UNION
+
+> SELECT name FROM my_table1
+>
+> **UNION**
+>
+> SELECT name FROM my_table2
+>
+> **UNION**
+>
+> SELECT name FROM my_table3;
+>
+> **// 모든 결과를 name열에 출력함.**
+>
+> **// 모든 결과를 합치는 동작.**
+>
+> // 중복 데이터는 없다.
+>
+> // 열의 개수는 같아야 한다.
+>
+> // 위에서 한 개 이면 밑에도 동일해야 한다.
+
+
+
+### UNION ALL
+
+> SELECT name FROM my_table1
+>
+> **UNION ALL**
+>
+> SELECT name FROMy_table2
+>
+> **UNION ALL**
+>
+> SELECT name FROM my_table3;
+>
+> **// UNION ALL을 사용하면 중복된 값들도 전부 출력한다.**
 
 
 
 ### JOIN
 
+![SQL JOIN](./SQL JOIN.png)
 
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
 
 --------------------------------------------------------------------------------------------------------------------------------------
 
@@ -153,7 +196,23 @@ GROUP BY country HAVING COUNT(country) >= 10
 ### 추가
 
 - DISTINCT (중복제거)
+
 - IFNULL(A,B)
+  
   - A가 NULL이면 B를, 그렇지 않으면 A 반환
+  
 - DATE_FORMAT
-  - >
+
+  ```mysql
+  SELECT DATE_FORMAT(NOW(), "%Y %c/%E %r")
+  ```
+
+  - %M  : 월(January, December, ...)
+  - %W : 요일(Sunday, Monday, ...)
+  - %D : 월(1st, 2nd, ...)
+  - %Y : 연도(1987, 2000, 2020)
+  - %y : 연도(87,00,20)
+  - %a : 요일(Sun, Mon, ...)
+  - %d : 일(00,01,02, ...)
+  - %e : 일(0, 1, 2, ...)
+  - %c : 월(1, 2, ...)

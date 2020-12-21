@@ -182,7 +182,7 @@ GROUP BY country HAVING COUNT(country) >= 10
 
 ### JOIN
 
-![SQL JOIN](./SQL JOIN.png)
+![SQL_JOIN](./SQL_JOIN.png)
 
 - INNER JOIN
 - LEFT JOIN
